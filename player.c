@@ -276,6 +276,8 @@ read_sndfile(char *file_path, struct song *song)
 	if ((song->internal = sf_open(file_path, SFM_READ, &info)) == NULL) {
 		return NULL;
 	}
+
+	sf_command(song->internal, SFC_SET_SCALE_FLOAT_INT_READ, NULL, SF_TRUE);
 	
 	song->rate = info.samplerate;
 	song->channels = info.channels;
