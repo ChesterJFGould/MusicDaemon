@@ -1,6 +1,7 @@
 struct song_reader song_readers[] = {
 	{ "wav", read_sndfile },
 	{ "ogg", read_sndfile },
+	{ "opus", read_sndfile },
 };
 
 const char *AO_DRIVER = "pulse";
